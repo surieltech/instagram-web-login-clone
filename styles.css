@@ -1,296 +1,180 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; /* Faz o padding não aumentar o tamanho da caixa */
+    margin: 0;          /* Remove margem de todos os elementos */
+    padding: 0;         /* Remove preenchimento de todos os elementos */
+    box-sizing: border-box; /* Faz com que padding e borda não aumentem o tamanho da caixa */
 }
 
-/* Estilo do corpo da página */
 body {
-    background-color: #fafafa; /* Cor de fundo cinza clarinho */
-    font-family: Arial, Helvetica, sans-serif; /* Fonte padrão */
-    min-height: 100vh; /* Altura mínima = 100% da tela */
+    font-family: Arial, sans-serif;  /* Define a fonte padrão */
+    background: #fafafa;             /* Cor de fundo cinza bem clarinho */
 }
 
-/* container principal (centraliza tudo) */
+/* container principal */
 .main-container {
-    display: flex; /* Ativa o flexbox para alinhar os itens lado a lado */
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
-    max-width: 935px; /* Largura máxima igual ao Instagram */
-    margin: 30px auto; /* Centraliza na tela (auto = automático) */
-    gap: 30px; /* Espaço entre o banner e o formulário */
-    padding: 0 20px; /* Espaçamento nas laterais em telas pequenas */
+    max-width: 935px;    /* Largura máxima igual ao Instagram */
+    margin: 30px auto;   /* Centraliza horizontalmente (auto = automático) */
+    display: flex;       /* Ativa o flexbox para alinhar os itens lado a lado */
+    gap: 30px;          /* Espaço entre o banner e o formulário */
 }
 
-/* banner (fica no lado esquerdo) */
+/* banner - lado esquerdo da tela */
 .banner-container {
-    flex: 1; /* Ocupa o espaço disponível */
-    max-width: 454px; /* Largura máxima */
-    display: flex;
-    justify-content: flex-end; /* Alinha a imagem à direita */
+    flex: 1;             /* Faz o banner ocupar o espaço disponível */
 }
 
 .banner-container img {
-    width: 100%; /* Largura total do container */
-    height: auto; /* Altura automática para não distorcer */
+    width: 100%;         /* A imagem ocupa 100% da largura do container */
 }
 
-/* formulario (fica do lado esquerdo) */
+/* formulario - lado direito */
 .form-container {
-    flex: 1; /* Ocupa o espaço disponível */
-    max-width: 350px; /* Largura máxima */
-    width: 100%; /* Largura total em telas pequenas */
-    display: flex;
-    flex-direction: column; /* Empilha os itens verticalmente */
-    gap: 10px; /* Espaço entre as caixas */
+    flex: 1;             /* Ocupa o espaço disponível */
+    max-width: 350px;    /* Largura máxima do formulário */
 }
 
 /* caixa de login */
 .login-box {
-    background-color: #ffffff; /* Fundo branco */
-    border: 1px solid #dbdbdb; /* Borda cinza */
-    padding: 30px 40px 20px; /* Espaçamento interno */
-    text-align: center; /* Centraliza o texto */
+    background: white;           /* Fundo branco */
+    border: 1px solid #dbdbdb;   /* Borda cinza ao redor */
+    padding: 30px 40px 20px;     /* Espaço interno: (cima) (laterais) (baixo) */
+    text-align: center;          /* Centraliza todo o conteúdo */
 }
 
 /* Logo do Instagram */
 .logo-instagram {
-    width: 175px; /* Largura fixa */
+    width: 175px;        /* Largura fixa da logo */
     margin-bottom: 20px; /* Espaço abaixo da logo */
 }
 
-/* formulario de login */
-#login-form {
-    display: flex;
-    flex-direction: column; /* Empilha os campos */
-    gap: 6px; /* Espaço entre os campos */
-}
-
+/* campos do formulario e senha */
 #login-form input {
-    width: 100%; /* Largura total */
-    height: 38px; /* Altura fixa */
-    padding: 0 8px; /* Espaçamento interno nas laterais */
-    font-size: 12px; /* Tamanho da fonte */
-    background-color: #fafafa; /* Fundo cinza clarinho */
+    width: 100%;         /* Ocupa toda a largura disponível */
+    height: 38px;        /* Altura do campo */
+    padding: 0 8px;      /* Espaço interno nas laterais */
+    margin-bottom: 6px;  /* Espaço entre um campo e outro */
+    background: #fafafa; /* Fundo cinza clarinho */
     border: 1px solid #dbdbdb; /* Borda cinza */
-    border-radius: 3px; /* Cantos arredondados */
+    border-radius: 3px;  /* Cantos levemente arredondados */
 }
 
-/* Quando o usuário clica no campo, a borda fica mais escura */
-#login-form input:focus {
-    border-color: #a8a8a8;
-    outline: none; /* Remove a borda azul padrão do navegador */
-}
-
-/* Botão de entrar */
+/* Botão ENTRAR */
 #login-form button {
-    width: 100%;
-    height: 32px;
-    margin-top: 8px;
-    background-color: #0095f6; /* Azul do Instagram */
-    color: #ffffff; /* Texto branco */
-    border: none; /* Sem borda */
-    border-radius: 4px;
-    font-weight: bold; /* Negrito */
-    font-size: 14px;
-    cursor: pointer; /* Mãozinha ao passar o mouse */
+    width: 100%;         /* Ocupa toda a largura */
+    height: 32px;        /* Altura do botão */
+    margin-top: 8px;     /* Espaço acima do botão */
+    background: #0095f6; /* Azul característico do Instagram */
+    color: white;        /* Texto branco */
+    border: none;        /* Remove a borda padrão */
+    border-radius: 4px;  /* Cantos arredondados */
+    font-weight: bold;   /* Texto em negrito */
+    cursor: pointer;     /* Muda o cursor para mãozinha ao passar o mouse */
 }
 
-/* Quando passa o mouse no botão, fica mais escuro */
-#login-form button:hover {
-    background-color: #1877f2;
-}
-
-/* divisor */
+/* divisor com duas linhas no meio */
 .divider {
-    display: flex;
-    align-items: center; /* Alinha verticalmente */
-    margin: 15px 0 20px; /* Espaçamento vertical */
+    display: flex;       /* Ativa o flexbox para alinhar os elementos */
+    align-items: center; /* Alinha tudo verticalmente no centro */
+    margin: 15px 0 20px; /* Espaço em cima e embaixo */
 }
 
-/* Cria as duas linhas (uma antes e uma depois do "OU") */
+/* Linha antes e depois do "OU" */
 .divider::before,
 .divider::after {
-    content: ''; /* Conteúdo vazio */
-    flex: 1; /* Ocupa o espaço disponível */
-    height: 1px; /* Altura da linha */
-    background-color: #dbdbdb; /* Cor da linha */
+    content: '';         /* Conteúdo vazio (só a linha) */
+    flex: 1;             /* Cada linha ocupa o espaço disponível */
+    height: 1px;         /* Altura da linha (fina) */
+    background: #dbdbdb; /* Cor cinza da linha */
 }
 
+/* Texto "OU" no meio */
 .divider span {
-    padding: 0 18px; /* Espaçamento nas laterais */
-    color: #8e8e8e; /* Cinza */
-    font-size: 13px;
-    font-weight: bold;
-    text-transform: uppercase; /* Deixa tudo maiúsculo */
+    padding: 0 18px;     /* Espaço nas laterais do texto */
+    color: #8e8e8e;      /* Cor cinza */
+    font-size: 13px;     /* Tamanho da fonte */
+    font-weight: bold;   /* Texto em negrito */
 }
 
 /* login com facebook */
 .facebook-login {
-    margin-bottom: 15px;
+    margin-bottom: 15px; /* Espaço abaixo do bloco */
 }
 
 .facebook-login a {
-    display: flex; /* Ativa flexbox */
-    align-items: center; /* Centraliza verticalmente */
+    display: flex;           /* Ativa o flexbox */
+    align-items: center;     /* Centraliza verticalmente */
     justify-content: center; /* Centraliza horizontalmente */
-    gap: 8px; /* Espaço entre a imagem e o texto */
-    text-decoration: none; /* Remove o sublinhado */
-    color: #385185; /* Azul do Facebook */
-    font-weight: bold;
-    font-size: 14px;
+    gap: 8px;               /* Espaço entre o ícone e o texto */
+    text-decoration: none;   /* Remove o sublinhado do link */
+    color: #385185;          /* Azul do Facebook */
+    font-weight: bold;       /* Negrito */
+    font-size: 14px;         /* Tamanho da fonte */
 }
 
 .facebook-login img {
-    width: 20px; /* Tamanho do ícone do Facebook */
-    height: 20px;
-}
-
-/* Quando passa o mouse, fica mais escuro */
-.facebook-login a:hover {
-    color: #1c3b6e;
+    width: 20px;             /* Tamanho do ícone do Facebook */
 }
 
 /* esqueceu a senha */
 .forgot-password {
-    font-size: 12px;
-    color: #00376b;
-    text-decoration: none;
+    font-size: 12px;         /* Fonte pequena */
+    color: #00376b;          /* Azul escuro */
+    text-decoration: none;   /* Remove o sublinhado */
 }
 
-/* Sublinha quando passa o mouse */
-.forgot-password:hover {
-    text-decoration: underline;
-}
-
-/* caixa de cadastro */
+/* caixa de cadastro (caso nao tenha um conta) */
 .signup-box {
-    background-color: #ffffff;
-    border: 1px solid #dbdbdb;
-    padding: 20px 0;
-    text-align: center;
-    font-size: 14px;
-    color: #262626;
+    background: white;           /* Fundo branco */
+    border: 1px solid #dbdbdb;   /* Borda cinza */
+    padding: 20px 0;             /* Espaço em cima e embaixo */
+    margin-top: 10px;            /* Espaço acima da caixa */
+    text-align: center;          /* Centraliza o texto */
 }
 
 .signup-box a {
-    color: #0095f6;
-    font-weight: bold;
-    text-decoration: none;
+    color: #0095f6;              /* Azul do Instagram */
+    font-weight: bold;           /* Negrito */
+    text-decoration: none;       /* Remove o sublinhado */
 }
 
-.signup-box a:hover {
-    text-decoration: underline;
-}
-
-/* baixar o app */
+/* botoes para baixar o aplicativo */
 .app-download {
-    text-align: center;
-    margin-top: 5px;
-}
-
-.app-download p {
-    font-size: 14px;
-    color: #262626;
-    margin-bottom: 15px;
+    text-align: center;          /* Centraliza o conteúdo */
+    margin-top: 15px;            /* Espaço acima */
 }
 
 .app-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 8px; /* Espaço entre os botões */
+    display: flex;               /* Deixa os botões lado a lado */
+    justify-content: center;     /* Centraliza os botões */
+    gap: 8px;                   /* Espaço entre os botões */
 }
 
 .app-buttons img {
-    height: 40px; /* Altura fixa */
-    width: auto; /* Largura automática */
+    height: 40px;                /* Altura fixa das imagens */
 }
 
 /* rodapé */
 footer {
-    max-width: 935px; /* Mesma largura do conteúdo principal */
-    margin: 40px auto 20px; /* Centraliza */
-    padding: 0 20px;
-    text-align: center;
+    max-width: 935px;            /* Mesma largura do conteúdo principal */
+    margin: 40px auto 20px;      /* Centraliza e adiciona espaço */
+    text-align: center;          /* Centraliza o texto */
 }
 
 .footer-links {
-    display: flex;
-    flex-wrap: wrap; /* Quebra para próxima linha se necessário */
-    justify-content: center; /* Centraliza */
-    list-style: none; /* Remove os marcadores da lista */
-    gap: 16px; /* Espaço entre os links */
-    margin-bottom: 12px;
+    display: flex;               /* Deixa os links lado a lado */
+    flex-wrap: wrap;            /* Permite quebrar para próxima linha se necessário */
+    justify-content: center;     /* Centraliza os links */
+    list-style: none;           /* Remove os marcadores (bolinhas) da lista */
+    gap: 16px;                  /* Espaço entre cada link */
+    margin-bottom: 12px;        /* Espaço abaixo dos links */
 }
 
 .footer-links a {
-    color: #8e8e8e;
-    font-size: 12px;
-    text-decoration: none;
-}
-
-.footer-links a:hover {
-    text-decoration: underline;
+    color: #8e8e8e;              /* Cor cinza */
+    font-size: 12px;             /* Fonte pequena */
+    text-decoration: none;       /* Remove o sublinhado */
 }
 
 .copyright {
-    color: #8e8e8e;
-    font-size: 12px;
-}
-
-/* responsividade */
-/* Quando a tela for menor que 875px, esconde o banner */
-@media (max-width: 875px) {
-    .banner-container {
-        display: none; /* Some com o banner */
-    }
-    
-    .main-container {
-        justify-content: center;
-        margin-top: 15px;
-    }
-    
-    .form-container {
-        max-width: 350px;
-    }
-}
-
-/* Quando a tela for menor que 450px (celular) */
-@media (max-width: 450px) {
-    body {
-        background-color: #ffffff; /* Fundo branco no celular */
-    }
-    
-    .main-container {
-        margin: 0;
-        padding: 0 15px;
-    }
-    
-    /* Remove as bordas das caixas no celular */
-    .login-box,
-    .signup-box {
-        border: none;
-        background: transparent;
-    }
-    
-    .login-box {
-        padding: 20px 0;
-    }
-    
-    .signup-box {
-        padding: 15px 0;
-    }
-    
-    .logo-instagram {
-        width: 175px;
-    }
-    
-    /* Ajusta os botões do app no celular */
-    .app-buttons img {
-        height: 38px;
-    }
-    
-    footer {
-        margin: 20px auto 10px;
-    }
+    color: #8e8e8e;              /* Cor cinza */
+    font-size: 12px;             /* Fonte pequena */
 }
