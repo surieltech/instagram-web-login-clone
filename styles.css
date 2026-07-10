@@ -1,180 +1,240 @@
+/* Remove margens e preenchimentos padrão de TODOS os elementos */
 * {
-    margin: 0;          /* Remove margem de todos os elementos */
-    padding: 0;         /* Remove preenchimento de todos os elementos */
-    box-sizing: border-box; /* Faz com que padding e borda não aumentem o tamanho da caixa */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Faz o padding não aumentar o tamanho da caixa */
 }
 
+/* Estilo do corpo da página */
 body {
-    font-family: Arial, sans-serif;  /* Define a fonte padrão */
-    background: #fafafa;             /* Cor de fundo cinza bem clarinho */
+    background-color: #fafafa; /* Cor de fundo cinza clarinho */
+    font-family: Arial, Helvetica, sans-serif; /* Fonte padrão */
+    min-height: 100vh; /* Altura mínima = 100% da tela */
 }
 
-/* container principal */
+/* container princiapl */
 .main-container {
-    max-width: 935px;    /* Largura máxima igual ao Instagram */
-    margin: 30px auto;   /* Centraliza horizontalmente (auto = automático) */
-    display: flex;       /* Ativa o flexbox para alinhar os itens lado a lado */
-    gap: 30px;          /* Espaço entre o banner e o formulário */
+    display: flex; /* Ativa o flexbox para alinhar os itens lado a lado */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    max-width: 935px; /* Largura máxima igual ao Instagram */
+    margin: 30px auto; /* Centraliza na tela (auto = automático) */
+    gap: 30px; /* Espaço entre o banner e o formulário */
+    padding: 0 20px; /* Espaçamento nas laterais em telas pequenas */
 }
 
-/* banner - lado esquerdo da tela */
+/* banner - lado esquerdo */
 .banner-container {
-    flex: 1;             /* Faz o banner ocupar o espaço disponível */
+    flex: 1; /* Ocupa o espaço disponível */
+    max-width: 454px; /* Largura máxima */
+    display: flex;
+    justify-content: flex-end; /* Alinha a imagem à direita */
 }
 
 .banner-container img {
-    width: 100%;         /* A imagem ocupa 100% da largura do container */
+    width: 100%; /* Largura total do container */
+    height: auto; /* Altura automática para não distorcer */
 }
 
 /* formulario - lado direito */
 .form-container {
-    flex: 1;             /* Ocupa o espaço disponível */
-    max-width: 350px;    /* Largura máxima do formulário */
+    flex: 1; /* Ocupa o espaço disponível */
+    max-width: 350px; /* Largura máxima */
+    width: 100%; /* Largura total em telas pequenas */
+    display: flex;
+    flex-direction: column; /* Empilha os itens verticalmente */
+    gap: 10px; /* Espaço entre as caixas */
 }
 
 /* caixa de login */
 .login-box {
-    background: white;           /* Fundo branco */
-    border: 1px solid #dbdbdb;   /* Borda cinza ao redor */
-    padding: 30px 40px 20px;     /* Espaço interno: (cima) (laterais) (baixo) */
-    text-align: center;          /* Centraliza todo o conteúdo */
+    background-color: #ffffff; /* Fundo branco */
+    border: 1px solid #dbdbdb; /* Borda cinza */
+    padding: 30px 40px 20px; /* Espaçamento interno */
+    text-align: center; /* Centraliza o texto */
 }
 
 /* Logo do Instagram */
 .logo-instagram {
-    width: 175px;        /* Largura fixa da logo */
+    width: 175px; /* Largura fixa */
     margin-bottom: 20px; /* Espaço abaixo da logo */
 }
 
-/* campos do formulario e senha */
+/* formulario de login */
+#login-form {
+    display: flex;
+    flex-direction: column; /* Empilha os campos */
+    gap: 6px; /* Espaço entre os campos */
+}
+
 #login-form input {
-    width: 100%;         /* Ocupa toda a largura disponível */
-    height: 38px;        /* Altura do campo */
-    padding: 0 8px;      /* Espaço interno nas laterais */
-    margin-bottom: 6px;  /* Espaço entre um campo e outro */
-    background: #fafafa; /* Fundo cinza clarinho */
+    width: 100%; /* Largura total */
+    height: 38px; /* Altura fixa */
+    padding: 0 8px; /* Espaçamento interno nas laterais */
+    font-size: 12px; /* Tamanho da fonte */
+    background-color: #fafafa; /* Fundo cinza clarinho */
     border: 1px solid #dbdbdb; /* Borda cinza */
-    border-radius: 3px;  /* Cantos levemente arredondados */
+    border-radius: 3px; /* Cantos arredondados */
 }
 
-/* Botão ENTRAR */
+/* Quando o usuário clica no campo, a borda fica mais escura */
+#login-form input:focus {
+    border-color: #a8a8a8;
+    outline: none; /* Remove a borda azul padrão do navegador */
+}
+
+/* Botão de entrar */
 #login-form button {
-    width: 100%;         /* Ocupa toda a largura */
-    height: 32px;        /* Altura do botão */
-    margin-top: 8px;     /* Espaço acima do botão */
-    background: #0095f6; /* Azul característico do Instagram */
-    color: white;        /* Texto branco */
-    border: none;        /* Remove a borda padrão */
-    border-radius: 4px;  /* Cantos arredondados */
-    font-weight: bold;   /* Texto em negrito */
-    cursor: pointer;     /* Muda o cursor para mãozinha ao passar o mouse */
+    width: 100%;
+    height: 32px;
+    margin-top: 8px;
+    background-color: #0095f6; /* Azul do Instagram */
+    color: #ffffff; /* Texto branco */
+    border: none; /* Sem borda */
+    border-radius: 4px;
+    font-weight: bold; /* Negrito */
+    font-size: 14px;
+    cursor: pointer; /* Mãozinha ao passar o mouse */
 }
 
-/* divisor com duas linhas no meio */
+/* Quando passa o mouse no botão, fica mais escuro */
+#login-form button:hover {
+    background-color: #1877f2;
+}
+
+/* divisor "ou" */
 .divider {
-    display: flex;       /* Ativa o flexbox para alinhar os elementos */
-    align-items: center; /* Alinha tudo verticalmente no centro */
-    margin: 15px 0 20px; /* Espaço em cima e embaixo */
+    display: flex;
+    align-items: center; /* Alinha verticalmente */
+    margin: 15px 0 20px; /* Espaçamento vertical */
 }
 
-/* Linha antes e depois do "OU" */
+/* Cria as duas linhas (uma antes e uma depois do "OU") */
 .divider::before,
 .divider::after {
-    content: '';         /* Conteúdo vazio (só a linha) */
-    flex: 1;             /* Cada linha ocupa o espaço disponível */
-    height: 1px;         /* Altura da linha (fina) */
-    background: #dbdbdb; /* Cor cinza da linha */
+    content: ''; /* Conteúdo vazio */
+    flex: 1; /* Ocupa o espaço disponível */
+    height: 1px; /* Altura da linha */
+    background-color: #dbdbdb; /* Cor da linha */
 }
 
-/* Texto "OU" no meio */
 .divider span {
-    padding: 0 18px;     /* Espaço nas laterais do texto */
-    color: #8e8e8e;      /* Cor cinza */
-    font-size: 13px;     /* Tamanho da fonte */
-    font-weight: bold;   /* Texto em negrito */
+    padding: 0 18px; /* Espaçamento nas laterais */
+    color: #8e8e8e; /* Cinza */
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase; /* Deixa tudo maiúsculo */
 }
 
 /* login com facebook */
 .facebook-login {
-    margin-bottom: 15px; /* Espaço abaixo do bloco */
+    margin-bottom: 15px;
 }
 
 .facebook-login a {
-    display: flex;           /* Ativa o flexbox */
-    align-items: center;     /* Centraliza verticalmente */
+    display: flex; /* Ativa flexbox */
+    align-items: center; /* Centraliza verticalmente */
     justify-content: center; /* Centraliza horizontalmente */
-    gap: 8px;               /* Espaço entre o ícone e o texto */
-    text-decoration: none;   /* Remove o sublinhado do link */
-    color: #385185;          /* Azul do Facebook */
-    font-weight: bold;       /* Negrito */
-    font-size: 14px;         /* Tamanho da fonte */
+    gap: 8px; /* Espaço entre a imagem e o texto */
+    text-decoration: none; /* Remove o sublinhado */
+    color: #385185; /* Azul do Facebook */
+    font-weight: bold;
+    font-size: 14px;
 }
 
 .facebook-login img {
-    width: 20px;             /* Tamanho do ícone do Facebook */
+    width: 20px; /* Tamanho do ícone do Facebook */
+    height: 20px;
+}
+
+/* Quando passa o mouse, fica mais escuro */
+.facebook-login a:hover {
+    color: #1c3b6e;
 }
 
 /* esqueceu a senha */
 .forgot-password {
-    font-size: 12px;         /* Fonte pequena */
-    color: #00376b;          /* Azul escuro */
-    text-decoration: none;   /* Remove o sublinhado */
+    font-size: 12px;
+    color: #00376b;
+    text-decoration: none;
 }
 
-/* caixa de cadastro (caso nao tenha um conta) */
+/* Sublinha quando passa o mouse */
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+/* caixa de cadastro */
 .signup-box {
-    background: white;           /* Fundo branco */
-    border: 1px solid #dbdbdb;   /* Borda cinza */
-    padding: 20px 0;             /* Espaço em cima e embaixo */
-    margin-top: 10px;            /* Espaço acima da caixa */
-    text-align: center;          /* Centraliza o texto */
+    background-color: #ffffff;
+    border: 1px solid #dbdbdb;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 14px;
+    color: #262626;
 }
 
 .signup-box a {
-    color: #0095f6;              /* Azul do Instagram */
-    font-weight: bold;           /* Negrito */
-    text-decoration: none;       /* Remove o sublinhado */
+    color: #0095f6;
+    font-weight: bold;
+    text-decoration: none;
 }
 
-/* botoes para baixar o aplicativo */
+.signup-box a:hover {
+    text-decoration: underline;
+}
+
+/* botoes de baixar o aplicativo */
 .app-download {
-    text-align: center;          /* Centraliza o conteúdo */
-    margin-top: 15px;            /* Espaço acima */
+    text-align: center;
+    margin-top: 5px;
+}
+
+.app-download p {
+    font-size: 14px;
+    color: #262626;
+    margin-bottom: 15px;
 }
 
 .app-buttons {
-    display: flex;               /* Deixa os botões lado a lado */
-    justify-content: center;     /* Centraliza os botões */
-    gap: 8px;                   /* Espaço entre os botões */
+    display: flex;
+    justify-content: center;
+    gap: 8px; /* Espaço entre os botões */
 }
 
 .app-buttons img {
-    height: 40px;                /* Altura fixa das imagens */
+    height: 40px; /* Altura fixa */
+    width: auto; /* Largura automática */
 }
 
 /* rodapé */
 footer {
-    max-width: 935px;            /* Mesma largura do conteúdo principal */
-    margin: 40px auto 20px;      /* Centraliza e adiciona espaço */
-    text-align: center;          /* Centraliza o texto */
+    max-width: 935px; /* Mesma largura do conteúdo principal */
+    margin: 40px auto 20px; /* Centraliza */
+    padding: 0 20px;
+    text-align: center;
 }
 
 .footer-links {
-    display: flex;               /* Deixa os links lado a lado */
-    flex-wrap: wrap;            /* Permite quebrar para próxima linha se necessário */
-    justify-content: center;     /* Centraliza os links */
-    list-style: none;           /* Remove os marcadores (bolinhas) da lista */
-    gap: 16px;                  /* Espaço entre cada link */
-    margin-bottom: 12px;        /* Espaço abaixo dos links */
+    display: flex;
+    flex-wrap: wrap; /* Quebra para próxima linha se necessário */
+    justify-content: center; /* Centraliza */
+    list-style: none; /* Remove os marcadores da lista */
+    gap: 16px; /* Espaço entre os links */
+    margin-bottom: 12px;
 }
 
 .footer-links a {
-    color: #8e8e8e;              /* Cor cinza */
-    font-size: 12px;             /* Fonte pequena */
-    text-decoration: none;       /* Remove o sublinhado */
+    color: #8e8e8e;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
 }
 
 .copyright {
-    color: #8e8e8e;              /* Cor cinza */
-    font-size: 12px;             /* Fonte pequena */
+    color: #8e8e8e;
+    font-size: 12px;
 }
